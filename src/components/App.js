@@ -5,16 +5,18 @@ import About from "./About";
 
 // pass this data down as props to the child component(s) that need it!
 import user from "../data/user";
-console.log(user);
+// uses .. to go to a differnet compent located in a diferent folder
 
-function App() {
+
+const App = () => {
   return (
     <div>
       <NavBar />
-      <Home />
-      <About />
+      <Home username={user.name} city={user.city} color={user.color} />
+      
+      <About bio={user.bio} links={user.links} />
     </div>
-  );
+  )
 }
 
 export default App;
